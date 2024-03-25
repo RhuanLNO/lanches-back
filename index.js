@@ -1,17 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('./utils/database');
+const cors = require('cors');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use((request, response, next) => {
-  response.setHeader('Access-Control-Allow-Origin', '*');
-  response.setHeader('Access-Control-Allow-Origin', 'GET, POST, PATCH, DELETE');
-  next();
-});
+app.use(cors());
 
 app.get('/', (request, response, next) => {
   response.send('Hello World');
