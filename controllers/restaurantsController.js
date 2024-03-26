@@ -63,6 +63,7 @@ exports.createRestaurant = async (request, response) => {
 	const name = request.body.name;
 	const businessHours = request.body.businessHours;
 	const phone = request.body.phone;
+	const photo = request.body.photo;
 	const instagram = request.body.instagram;
 	const categories = request.body.categories ?? [];
 
@@ -111,6 +112,7 @@ exports.createRestaurant = async (request, response) => {
 			businessHours: businessHours,
 			phone: phone,
 			instagram: instagram,
+			photo: photo
 		});
 		await createdRestaurant.addCategory(categories);
 		return response.status(201).json({
