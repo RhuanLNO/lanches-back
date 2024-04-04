@@ -15,7 +15,7 @@ const Restaurant = db.define('restaurant', {
   businessHours: Sequelize.STRING,
   instagram: Sequelize.STRING,
   phone: Sequelize.STRING,
-  photo: Sequelize.STRING,
+  photo: Sequelize.TEXT,
 });
 
 module.exports = Restaurant;
